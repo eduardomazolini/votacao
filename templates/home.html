@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Votação</h1>
+<p class="muted">Insira sua <strong>Matrícula</strong> e a <strong>Senha</strong> recebida. A senha pode ser usada apenas uma vez.</p>
+<form method="POST" action="/verificar">
+    <label>Matrícula</label>
+    <input name="matricula" required>
+    <label>Senha</label>
+    <input name="token" required maxlength="12"
+           pattern="[A-Z0-9]+"
+           title="Apenas letras maiúsculas e números"
+           oninput="this.value=this.value.toUpperCase()">
+    <button type="submit">Continuar</button>
+</form>
+<h2>Candidatos</h2>
+<div class="grid">
+    {% for candidate in candidates %}
+    <div class="card">
+        <img src="{{ candidate.foto }}" alt="{{ candidate.nome }}">
+        <div><strong>{{ candidate.nome }}</strong></div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

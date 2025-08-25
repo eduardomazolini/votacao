@@ -1,0 +1,71 @@
+body {
+    font-family: system-ui, Arial, sans-serif;
+    margin: 0;
+    padding: 16px;
+    background: #f8f9fb;
+}
+
+.container {
+    max-width: 840px;
+    margin: 0 auto;
+    background: white;
+    padding: 16px;
+    border: 1px solid #e5e7eb;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.card {
+    border: 1px solid #e5e7eb;
+    padding: 8px;
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.muted {
+    color: #6b7280;
+    font-size: 0.9em;
+}
+
+.error {
+    color: #b91c1c;
+}
+
+.success {
+    color: #065f46;
+}
+
+input, select, button {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+}
+
+form {
+    display: grid;
+    gap: 8px;
+}
+
+.radio-option {
+    display: block;
+    border: 1px solid #e5e7eb;
+    padding: 8px;
+    margin: 6px 0;
+}
+
+.radio-option img {
+    width: 90px;
+    vertical-align: middle;
+}

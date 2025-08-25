@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Cédula{% endblock %}
+
+{% block content %}
+<h1>Confirme seu voto</h1>
+<form method="POST" action="/votar">
+    <input type="hidden" name="token" value="{{ token }}">
+    <input type="hidden" name="matricula" value="{{ matricula }}">
+    {% for candidate in candidates %}
+    <label class="radio-option">
+        <input type="radio" name="opcao" value="{{ candidate.id }}" required> 
+        <img src="{{ candidate.foto }}" alt="{{ candidate.nome }}"> 
+        <strong>{{ candidate.nome }}</strong>
+    </label>
+    {% endfor %}
+    <button type="submit">Confirmar</button>
+</form>
+{% endblock %}
